@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    .notification {
+      position: relative;
+
+      span {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: red;
+        border-radius: 50%;
+        color: white;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+      }
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      img {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}
