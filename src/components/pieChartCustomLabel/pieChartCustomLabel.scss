@@ -1,0 +1,41 @@
+.pieChartCustomLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px 10px 10px;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+
+  .chart {
+    width: 100%;
+    height: 100%;
+  }
+
+  .options {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .header {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

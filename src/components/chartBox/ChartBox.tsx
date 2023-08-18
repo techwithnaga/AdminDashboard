@@ -49,22 +49,34 @@ const data = [
   },
 ];
 
-const ChartBox = () => {
+type Props = {
+  color: string;
+  icon: string;
+  title: string;
+  dataKey: string;
+  number: number | string;
+  percentage: number;
+  chartData: object[];
+};
+
+const ChartBox = (props: Props) => {
   return (
     <div className="chartBox">
       <div className="boxInfo">
         <div className="title">
-          <img src="/user.svg" alt="" />
-          <span Total Users></span>
+          <img src="{props.icon}" alt="" />
+          <span>{props.title}</span>
         </div>
-        <h1>11.238</h1>
-        <Link to="/">view all</Link>
+        <h1>{props.number}</h1>
+        <Link to="/" style={{ color: props.color }}>
+          view all
+        </Link>
       </div>
 
       <div className="chartInfo">
         <div className="chart">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={300} height={100} data={data}>
+          <ResponsiveContainer width="99%" height="100%">
+            <LineChart data={props.chartData}>
               <Tooltip
                 wrapperStyle={{ background: "transparent" }}
                 itemStyle={{ background: "transparent" }}
@@ -77,8 +89,8 @@ const ChartBox = () => {
               ></Tooltip>
               <Line
                 type="monotone"
-                dataKey="pv"
-                stroke="#8884d8"
+                dataKey={props.dataKey}
+                stroke={props.color}
                 strokeWidth={2}
                 dot={false}
               />
@@ -86,7 +98,12 @@ const ChartBox = () => {
           </ResponsiveContainer>
         </div>
         <div className="texts">
-          <div className="percentage">45%</div>
+          <div
+            className="percentage"
+            style={{ color: props.percentage > 0 ? "limegreen" : "tomato" }}
+          >
+            {props.percentage}%
+          </div>
           <div className="duration">this month</div>
         </div>
       </div>
