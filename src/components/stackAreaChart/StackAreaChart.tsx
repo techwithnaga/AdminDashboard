@@ -56,8 +56,8 @@ const StackAreaChart = () => {
   ];
   return (
     <div className="stackAreaChart">
-      <h1>Revenue Analytics</h1>
-      <ResponsiveContainer width="100%" height={300}>
+      <h5>Revenue Analytics</h5>
+      <ResponsiveContainer width="100%" height={250}>
         <AreaChart
           data={data}
           margin={{

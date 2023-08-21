@@ -65,7 +65,7 @@ const ChartBox = (props: Props) => {
       <div className="boxInfo">
         <div className="title">
           <img src="{props.icon}" alt="" />
-          <span>{props.title}</span>
+          <h5>{props.title}</h5>
         </div>
         <h1>{props.number}</h1>
         <Link to="/" style={{ color: props.color }}>

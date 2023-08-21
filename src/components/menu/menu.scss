@@ -2,9 +2,27 @@
 @import "../../styles/variables.scss";
 
 .menu {
-  width: 100%;
+  width: 12%;
   background-color: $main-bg;
   height: 100%;
+  padding: 15px;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   .group {
     display: flex;
     flex-direction: column;
@@ -16,6 +34,8 @@
       font-weight: 200;
       color: $soft-color;
       text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-top: 20px;
     }
 
     .item {
@@ -34,7 +54,7 @@
       }
 
       .itemTitle {
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
   }

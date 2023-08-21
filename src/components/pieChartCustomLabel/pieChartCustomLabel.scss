@@ -7,6 +7,10 @@
   align-items: center;
   height: 100%;
 
+  h5 {
+    font-family: var(--font-mono);
+  }
+
   .chart {
     width: 100%;
     height: 100%;
@@ -30,6 +34,10 @@
         display: flex;
         gap: 10px;
         align-items: center;
+
+        label {
+          font-family: var(--font-mono);
+        }
         .dot {
           width: 10px;
           height: 10px;

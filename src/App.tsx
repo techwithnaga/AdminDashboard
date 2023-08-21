@@ -11,12 +11,11 @@ import "./styles/global.scss";
 const Layout = () => {
   return (
     <div className="main">
-      <Navbar />
       <div className="container">
-        <div className="menuContainer">
-          <Menu />
-        </div>
+        <Menu />
+
         <div className="contentContainer">
+          <Navbar />
           <Outlet />
         </div>
       </div>

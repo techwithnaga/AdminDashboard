@@ -77,24 +77,24 @@ export const menu = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "Maintenance",
-    listItems: [
-      {
-        id: 1,
-        title: "Settings",
-        url: "/",
-        icon: "setting.svg",
-      },
-      {
-        id: 2,
-        title: "Backups",
-        url: "/",
-        icon: "backup.svg",
-      },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   title: "Maintenance",
+  //   listItems: [
+  //     {
+  //       id: 1,
+  //       title: "Settings",
+  //       url: "/",
+  //       icon: "setting.svg",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Backups",
+  //       url: "/",
+  //       icon: "backup.svg",
+  //     },
+  //   ],
+  // },
   {
     id: 5,
     title: "analytics",
@@ -116,13 +116,13 @@ export const menu = [
 ];
 
 export const topDealUsers = [
-  {
-    id: 1,
-    img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    username: "Elva McDonald",
-    email: "elva@gmail.com",
-    amount: "3.668",
-  },
+  // {
+  //   id: 1,
+  //   img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+  //   username: "Elva McDonald",
+  //   email: "elva@gmail.com",
+  //   amount: "3.668",
+  // },
   {
     id: 2,
     img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1600",

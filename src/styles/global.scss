@@ -1,9 +1,25 @@
 @import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500&display=swap");
 
+:root {
+  --font-spartan: "League Spartan", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  color: var(--grey);
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 a {
@@ -13,7 +29,7 @@ a {
 
 .main {
   font-family: "Inter", sans-serif;
-  background-color: $main-bg;
+  background-color: $dark-bg;
   color: $main-color;
   height: 100vh;
 }
@@ -21,7 +37,6 @@ a {
 .container {
   display: flex;
   height: 100%;
-  background-color: $main-bg;
 }
 
 .menuContainer {
@@ -32,4 +47,63 @@ a {
 
 .contentContainer {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+h5 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+label {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 400;
+  font-size: 14px;
 }

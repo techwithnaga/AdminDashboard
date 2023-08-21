@@ -11,10 +11,10 @@ const data = [
 const PieChartCustomLabel = () => {
   return (
     <div className="pieChartCustomLabel">
-      <h3>Leads by Source</h3>
+      <h5>Leads by Source</h5>
 
       <div className="chart">
-        <ResponsiveContainer width="99%" height={400}>
+        <ResponsiveContainer width="99%" height={350}>
           <PieChart>
             <Tooltip
               contentStyle={{ backgroundColor: "white", borderRadius: "5px" }}

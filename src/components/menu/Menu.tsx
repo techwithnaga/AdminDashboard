@@ -5,6 +5,12 @@ import { menu } from "../../data";
 const Menu = () => {
   return (
     <div className="menu">
+      <div className="head">
+        <img src="/myIcon.png" alt="" className="profilePic" />
+        <h5>Masnaga</h5>
+        <label htmlFor="title">Chief Technology Officer</label>
+      </div>
+
       {menu.map((item) => {
         return (
           <div className="group" key={item.id}>
@@ -13,7 +19,9 @@ const Menu = () => {
               return (
                 <Link to={listItem.url} className="item">
                   <img src={listItem.icon} alt="" />
-                  <div className="itemTitle">{listItem.title}</div>
+                  <div className="itemTitle">
+                    <p>{listItem.title}</p>
+                  </div>
                 </Link>
               );
             })}

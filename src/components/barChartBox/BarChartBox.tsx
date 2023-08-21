@@ -11,7 +11,7 @@ type Props = {
 const BarChartBox = (props: Props) => {
   return (
     <div className="barChartBox">
-      <h3>{props.title}</h3>
+      <h5>{props.title}</h5>
       <div className="chart">
         <ResponsiveContainer width="99%" height={170}>
           <BarChart data={props.chartData}>

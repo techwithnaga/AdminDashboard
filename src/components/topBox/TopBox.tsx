@@ -4,7 +4,7 @@ import "./topBox.scss";
 const TopBox = () => {
   return (
     <div className="topBox">
-      <h1>Top Deals</h1>
+      <h5>Top Deals</h5>
       <div className="list">
         {topDealUsers.map((user) => {
           return (
