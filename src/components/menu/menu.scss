@@ -1,7 +1,10 @@
 @import "../../styles/global.scss";
+@import "../../styles/variables.scss";
 
 .menu {
   width: 100%;
+  background-color: $main-bg;
+  height: 100%;
   .group {
     display: flex;
     flex-direction: column;

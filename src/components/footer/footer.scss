@@ -1,8 +1,12 @@
+@import "../../styles/variables.scss";
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  width: 100%;
+  background-color: $main-bg;
 
   span {
     &:first-child {

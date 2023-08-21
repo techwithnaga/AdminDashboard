@@ -309,7 +309,18 @@ export const barChartBoxVisit = {
   ],
 };
 
-export const userRows = [
+type User = {
+  id: number;
+  img: String;
+  lastName: String;
+  firstName: String;
+  email: String;
+  phone: String;
+  createdAt: String;
+  verified: Boolean;
+};
+
+export let userRows: User[] = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -318,7 +329,7 @@ export const userRows = [
     email: "kewez@@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: true,
+    verified: false,
   },
   {
     id: 2,
@@ -358,6 +369,7 @@ export const userRows = [
     email: "gobtagbes@yahoo.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
   {
     id: 6,
@@ -377,6 +389,7 @@ export const userRows = [
     email: "reso.bilic@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: true,
   },
   {
     id: 8,
@@ -396,6 +409,7 @@ export const userRows = [
     email: "uzozor@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
   {
     id: 10,
@@ -425,6 +439,7 @@ export const userRows = [
     email: "tic.harvey@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
   {
     id: 13,
@@ -434,6 +449,7 @@ export const userRows = [
     email: "ceuc@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
   {
     id: 14,
@@ -443,6 +459,7 @@ export const userRows = [
     email: "bafuv@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
   {
     id: 15,
@@ -452,6 +469,7 @@ export const userRows = [
     email: "ubi@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false,
   },
 ];
 

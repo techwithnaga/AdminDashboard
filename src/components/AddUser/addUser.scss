@@ -1,0 +1,69 @@
+.addUser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .addUserContainer {
+    width: 35vw;
+    background-color: white;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px;
+      gap: 25px;
+
+      .item {
+        color: darkgreen;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        width: 100%;
+
+        label {
+          flex: 1;
+          width: 100%;
+        }
+        input {
+          flex: 3;
+          padding: 10px;
+          width: 100%;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        padding: 8px;
+        margin-top: 15px;
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        color: darkgreen;
+      }
+
+      .icon {
+        color: red;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}
