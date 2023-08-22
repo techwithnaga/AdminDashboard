@@ -10,10 +10,10 @@
   align-items: center;
 
   .addUserContainer {
-    width: 35vw;
+    width: 45vw;
+
     background-color: white;
     border-radius: 20px;
-
     padding: 20px;
 
     .items {
@@ -23,31 +23,14 @@
       gap: 25px;
 
       .item {
-        color: darkgreen;
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
+        color: var(--color-green400);
         width: 100%;
-
-        label {
-          flex: 1;
-          width: 100%;
-        }
-        input {
-          flex: 3;
-          padding: 10px;
-          width: 100%;
-        }
       }
+    }
 
-      .btn {
-        width: 100%;
-        padding: 8px;
-        margin-top: 15px;
-        grid-column: span 2;
-        grid-row: span 1;
-      }
+    .btn {
+      grid-column: span 2;
+      padding: 8px;
     }
 
     .header {

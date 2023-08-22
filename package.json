@@ -15,11 +15,13 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.5",
     "@mui/x-data-grid": "^6.11.2",
+    "formik": "^2.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "recharts": "^2.7.3",
-    "sass": "^1.65.1"
+    "sass": "^1.65.1",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

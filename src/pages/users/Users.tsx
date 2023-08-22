@@ -1,10 +1,9 @@
 import "./users.scss";
 import { GridColDef } from "@mui/x-data-grid";
 import { userRows } from "../../data";
-import CheckIcon from "@mui/icons-material/Check";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import DataTable from "../../components/dataTable/DataTable";
 import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
 import AddUser from "../../components/AddUser/AddUser";
 
 const columns: GridColDef[] = [
@@ -40,7 +39,7 @@ const columns: GridColDef[] = [
     field: "email",
     headerName: "Email",
     type: "text",
-    width: 200,
+    width: 250,
     editable: true,
   },
 
@@ -48,7 +47,7 @@ const columns: GridColDef[] = [
     field: "phone",
     headerName: "Phone",
     type: "text",
-    width: 110,
+    width: 200,
     editable: true,
   },
 
@@ -60,11 +59,9 @@ const columns: GridColDef[] = [
     width: 110,
     renderCell: (params) => {
       if (params.row.verified) {
-        return <CheckIcon style={{ color: "grey" }}></CheckIcon>;
+        return <p>YES</p>;
       } else {
-        return (
-          <CloseOutlinedIcon style={{ color: "grey" }}></CloseOutlinedIcon>
-        );
+        return <p>NO</p>;
       }
     },
   },
@@ -77,7 +74,6 @@ type User = {
   firstName: string;
   email: string;
   phone: string;
-  createdAt: string;
   verified: boolean;
 };
 
@@ -87,6 +83,10 @@ const Users = () => {
   const [rowsState, setRowsState] = useState(userRows);
 
   const addRow = (newRow: User) => {
+    newRow.id = rowsState.length + 1;
+    newRow.verified = false;
+    newRow.img = "";
+
     setRowsState((prevRows) => [...prevRows, newRow]);
   };
   return (
@@ -94,7 +94,10 @@ const Users = () => {
       <div className="header">
         <h1 style={{ color: "lightgrey" }}>Users</h1>
         <button className="btn" onClick={() => setOpen(true)}>
-          Create
+          <AddIcon
+            style={{ fontSize: "20px", color: "var(--color-gold500)" }}
+          ></AddIcon>{" "}
+          Create User
         </button>
       </div>
 

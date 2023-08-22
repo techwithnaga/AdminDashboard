@@ -13,7 +13,6 @@ const Layout = () => {
     <div className="main">
       <div className="container">
         <Menu />
-
         <div className="contentContainer">
           <Navbar />
           <Outlet />

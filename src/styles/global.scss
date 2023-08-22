@@ -4,7 +4,35 @@
 :root {
   --font-spartan: "League Spartan", sans-serif;
   --font-mono: "Roboto Mono", monospace;
+
+  //backgroundColor
+  --color-bg100: #d4d6da;
+  --color-bg200: #aaaeb5;
+  --color-bg300: #7f8591;
+  --color-bg400: #555d6c;
+  --color-bg500: #2a3447;
+  --color-bg600: #222a39;
+  --color-bg700: #191f2b;
+  --color-bg800: #11151c;
+  --color-bg900: #080a0e;
+
+  //gold color
+  --color-gold100: #fff8d9;
+  --color-gold200: #fff1b4;
+  --color-gold300: #ffeb8e;
+  --color-gold400: #ffe469;
+  --color-gold500: #ffdd43;
+  --color-gold600: #ccb136;
+  --color-gold700: #998528;
+  --color-gold800: #66581b;
+  --color-gold900: #332c0d;
+
+  //green
+  --color-green400: #345b4d;
+  --color-green500: #013220;
+  --color-green600: #01281a;
 }
+
 * {
   margin: 0;
   padding: 0;

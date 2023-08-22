@@ -1,8 +1,11 @@
 import "./addUser.scss";
 import { GridColDef } from "@mui/x-data-grid";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import Button from "@mui/material/Button";
 import { useState } from "react";
+import { Formik } from "formik";
+import * as yup from "yup";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Box, Button, TextField } from "@mui/material";
 
 type User = {
   id: number;
@@ -11,7 +14,6 @@ type User = {
   firstName: string;
   email: string;
   phone: string;
-  createdAt: string;
   verified: boolean;
 };
 
@@ -25,28 +27,32 @@ type Props = {
 
 const AddUser = (props: Props) => {
   const { columns, setOpen, addRow, lastId, setLastId } = props;
-  const [data, setData] = useState<User>({
-    id: lastId + 1,
-    img: "",
+
+  const handleFormSubmit = (values: User) => {
+    setLastId(lastId + 1);
+    addRow(values);
+    setOpen(false);
+  };
+
+  const initialValues = {
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    verified: true,
-    createdAt: new Date().toUTCString(),
+  };
+
+  const phoneRegExp =
+    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+  const userSchema = yup.object().shape({
+    firstName: yup.string().required("required"),
+    lastName: yup.string().required("required"),
+    email: yup.string().email("invalid email").required("required"),
+    phone: yup
+      .string()
+      .matches(phoneRegExp, "Phone number is not valid")
+      .required("required"),
   });
-
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    console.log(data);
-    setLastId(lastId + 1);
-    addRow(data);
-    setOpen(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
 
   return (
     <div className="addUser">
@@ -55,37 +61,82 @@ const AddUser = (props: Props) => {
           <h2>Add User</h2>
           <CloseOutlinedIcon onClick={() => setOpen(false)} className="icon" />
         </div>
-        <div className="items">
-          {columns
-            .filter(
-              (item) =>
-                item.field !== "id" &&
-                item.field !== "img" &&
-                item.field !== "verified"
-            )
-            .map((col) => {
-              return (
-                <div className="item">
-                  <label>{col.headerName}</label>
-                  <input
-                    type={col.type}
-                    placeholder={col.field}
-                    name={col.field}
-                    onChange={(e) => handleChange(e)}
-                  />
-                </div>
-              );
-            })}
 
-          <Button
-            variant="outlined"
-            color="success"
-            className="btn"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Submit
-          </Button>
-        </div>
+        <Formik
+          onSubmit={handleFormSubmit}
+          initialValues={initialValues}
+          validationSchema={userSchema}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleBlur,
+            handleChange,
+            handleSubmit,
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div className="items">
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  label="First Name"
+                  type="text"
+                  name="firstName"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  error={!!touched.firstName && !!errors.firstName}
+                  helperText={touched.firstName && errors.firstName}
+                  className="item"
+                />
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  label="Last Name"
+                  type="text"
+                  name="lastName"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  error={!!touched.lastName && !!errors.lastName}
+                  helperText={touched.lastName && errors.lastName}
+                  className="item"
+                />
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  label="Email"
+                  type="text"
+                  name="email"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  error={!!touched.email && !!errors.email}
+                  helperText={touched.email && errors.email}
+                  className="item"
+                />
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  label="Phone"
+                  type="text"
+                  name="phone"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  error={!!touched.phone && !!errors.phone}
+                  helperText={touched.phone && errors.phone}
+                  className="item"
+                />
+                <Button
+                  variant="outlined"
+                  color="success"
+                  className="btn"
+                  type="submit"
+                >
+                  Create New User
+                </Button>
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
     </div>
   );

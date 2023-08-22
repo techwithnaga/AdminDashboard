@@ -1,5 +1,14 @@
 .dataTable {
   .dataGrid {
-    background: white;
+    background: var(--color-bg500);
+    color: white;
+
+    .MuiSvgIcon-root {
+      color: white;
+    }
+
+    .MuiTablePagination-displayedRows {
+      color: white;
+    }
   }
 }
