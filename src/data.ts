@@ -1,3 +1,21 @@
+export const initialEvents = [
+  {
+    id: 1,
+    title: "Techwithnaga's Christmas Celebration",
+    start: "2023-12-23",
+  },
+  {
+    id: 2,
+    title: "Meeting with vendors",
+    start: "2023-11-23",
+  },
+  {
+    id: 3,
+    title: "Performance review",
+    start: "2023-10-23",
+  },
+];
+
 export const menu = [
   {
     id: 1,
@@ -72,7 +90,7 @@ export const menu = [
       {
         id: 4,
         title: "Calendar",
-        url: "/",
+        url: "/calendar",
         icon: "calendar.svg",
       },
     ],

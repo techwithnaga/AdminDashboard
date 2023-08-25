@@ -1,0 +1,48 @@
+.calendar {
+  width: 100%;
+  height: 100%;
+}
+
+.calendarContainer {
+  padding: 20px;
+  display: flex;
+  height: 100%;
+
+  .events {
+    flex: 1;
+    background-color: var(--color-bg500);
+    height: 100%;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .event {
+      height: 100px;
+      width: 90%;
+      background-color: var(--color-bg400);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 10px;
+
+      .eventTitle {
+        height: 100px;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-gold500);
+        }
+      }
+    }
+  }
+
+  .calendar {
+    flex: 7;
+    padding: 20px;
+  }
+}
