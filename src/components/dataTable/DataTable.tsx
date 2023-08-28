@@ -3,18 +3,8 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import PageviewOutlinedIcon from "@mui/icons-material/PageviewOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { useState, useEffect } from "react";
-
-type User = {
-  id: number;
-  img: String;
-  lastName: String;
-  firstName: String;
-  email: String;
-  phone: String;
-  createdAt: String;
-  verified: Boolean;
-};
+import { useEffect } from "react";
+import { User } from "../../types/User";
 
 type Props = {
   columns: GridColDef[];
@@ -38,7 +28,7 @@ const DataTable = (props: Props) => {
     renderCell: (params) => {
       return (
         <div className="icons">
-          <Link to={`/${slug}/${params.row.id}`}>
+          <Link to={`/${slug}/${params.row.id}`} state={{ user: params.row }}>
             <PageviewOutlinedIcon
               className="icon"
               style={{ color: "limegreen" }}

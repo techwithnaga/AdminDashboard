@@ -1,5 +1,8 @@
 .topBox {
   padding: 10px;
+  height: 100%;
+  box-sizing: border-box;
+
   h5 {
     margin-bottom: 15px;
     font-family: var(--font-mono);
@@ -8,9 +11,10 @@
     .listItem {
       display: flex;
       justify-content: space-between;
-      padding: 15px;
+      align-items: center;
+      padding: 10px;
 
-      .user {
+      .customer {
         display: flex;
         gap: 20px;
         img {

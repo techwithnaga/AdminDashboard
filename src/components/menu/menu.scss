@@ -2,10 +2,11 @@
 @import "../../styles/variables.scss";
 
 .menu {
-  width: 12%;
+  width: 15%;
   background-color: $main-bg;
   height: 100%;
   padding: 15px;
+  border-radius: 20px;
 
   .head {
     display: flex;

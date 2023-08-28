@@ -4,19 +4,15 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { initialEvents } from "../../data";
 import "./calendar.scss";
-// import {
-//   Box,
-//   List,
-//   ListItem,
-//   ListItemText,
-//   Typography,
-//   useTheme,
-// } from "@mui/material ";
+import { useEffect } from "react";
 
 const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState(initialEvents);
+  const [showEditModal, setShowEditModal] = useState(true);
+  const [showCreateModal, setShowCreateModal] = useState(true);
+  const [selectedEvent, setSelectedEvent] = useState({});
 
-  const handleClick = (selected) => {
+  const handleDateClick = (selected) => {
     console.log(selected);
     const title = prompt("please enter a new title for your event");
     const calendarApi = selected.view.calendar;
@@ -29,12 +25,17 @@ const Calendar = () => {
           id: currentEvents.length + 1,
           title: title,
           start: selected.dateStr,
-          end: selected.endStr,
-          allDay: selected.allDay,
         },
       ]);
     }
   };
+
+  const handleEventClick = (selected) => {
+    setSelectedEvent(selected.event);
+    setShowEditModal(true);
+  };
+
+  useEffect(() => {}, [currentEvents]);
 
   return (
     <div className="calendar">
@@ -54,13 +55,25 @@ const Calendar = () => {
           <FullCalendar
             height="85vh"
             plugins={[dayGridPlugin, interactionPlugin]}
-            dateClick={handleClick}
+            dateClick={handleDateClick}
             initialView="dayGridMonth"
             events={currentEvents}
+            editable={true}
+            eventClick={handleEventClick}
+            // selectable={true}
+            // selectMirror={true}
             // eventsSet={(events) => setCurrentEvents(events)}
           />
         </div>
       </div>
+
+      {showEditModal && (
+        <div className="modal">
+          <div className="modalHeader">
+            <p>Edit Event</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

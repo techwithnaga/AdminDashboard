@@ -42,7 +42,6 @@ const columns: GridColDef[] = [
     width: 250,
     editable: true,
   },
-
   {
     field: "phone",
     headerName: "Phone",
@@ -50,7 +49,6 @@ const columns: GridColDef[] = [
     width: 200,
     editable: true,
   },
-
   {
     field: "verified",
     headerName: "Verified",
@@ -80,7 +78,7 @@ type User = {
 const Users = () => {
   const [open, setOpen] = useState(false);
   const [lastId, setLastId] = useState(userRows.length);
-  const [rowsState, setRowsState] = useState(userRows);
+  const [rowsState, setRowsState] = useState<User[]>(userRows);
 
   const addRow = (newRow: User) => {
     newRow.id = rowsState.length + 1;

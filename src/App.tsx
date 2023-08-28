@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Login from "./pages/login/Login";
 import Calendar from "./pages/calendar/Calendar";
+import UserDetail from "./pages/user/User";
 import "./styles/global.scss";
 
 const Layout = () => {
@@ -45,6 +46,10 @@ const App = () => {
         {
           path: "/calendar",
           element: <Calendar />,
+        },
+        {
+          path: "/user/:id",
+          element: <UserDetail />,
         },
       ],
     },
