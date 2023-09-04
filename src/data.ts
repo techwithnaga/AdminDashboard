@@ -1,4 +1,4 @@
-export const initialEvents = [
+export let initialEvents = [
   {
     id: 1,
     title: "Techwithnaga's Christmas Celebration",

@@ -9,19 +9,32 @@ import Login from "./pages/login/Login";
 import Calendar from "./pages/calendar/Calendar";
 import UserDetail from "./pages/user/User";
 import "./styles/global.scss";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const Layout = () => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#345b4d",
+      },
+      secondary: {
+        main: "#ffdd43",
+      },
+    },
+  });
   return (
-    <div className="main">
-      <div className="container">
-        <Menu />
-        <div className="contentContainer">
-          <Navbar />
-          <Outlet />
+    <ThemeProvider theme={theme}>
+      <div className="main">
+        <div className="container">
+          <Menu />
+          <div className="contentContainer">
+            <Navbar />
+            <Outlet />
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeProvider>
   );
 };
 

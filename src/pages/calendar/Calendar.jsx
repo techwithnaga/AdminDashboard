@@ -5,29 +5,31 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { initialEvents } from "../../data";
 import "./calendar.scss";
 import { useEffect } from "react";
+import EventModal from "./EventModal";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState(initialEvents);
-  const [showEditModal, setShowEditModal] = useState(true);
-  const [showCreateModal, setShowCreateModal] = useState(true);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState({});
 
   const handleDateClick = (selected) => {
-    console.log(selected);
-    const title = prompt("please enter a new title for your event");
-    const calendarApi = selected.view.calendar;
-    calendarApi.unselect();
+    setSelectedEvent({
+      id: currentEvents.length + 1,
+      title: "",
+      start: selected.dateStr,
+    });
+    setShowCreateModal(true);
+  };
 
-    if (title) {
-      setCurrentEvents([
-        ...currentEvents,
-        {
-          id: currentEvents.length + 1,
-          title: title,
-          start: selected.dateStr,
-        },
-      ]);
-    }
+  const handleCreate = (data) => {
+    // const title = prompt("please enter a new title for your event");
+    // const calendarApi = selected.view.calendar;
+    // calendarApi.unselect();
+
+    setCurrentEvents([...currentEvents, data]);
+    setShowCreateModal(false);
   };
 
   const handleEventClick = (selected) => {
@@ -35,7 +37,28 @@ const Calendar = () => {
     setShowEditModal(true);
   };
 
-  useEffect(() => {}, [currentEvents]);
+  const handleUpdate = (data) => {
+    //update
+    setCurrentEvents(
+      currentEvents.map((event) => {
+        if (event.id == data.id) {
+          return { ...event, title: data.title };
+        } else {
+          return event;
+        }
+      })
+    );
+
+    setShowEditModal(false);
+  };
+
+  const handleDelete = (id) => {
+    setCurrentEvents(currentEvents.filter((event) => event.id !== id));
+  };
+
+  useEffect(() => {
+    // console.log(currentEvents);
+  }, [currentEvents]);
 
   return (
     <div className="calendar">
@@ -45,8 +68,26 @@ const Calendar = () => {
           {currentEvents.map((event) => {
             return (
               <div className="event" key={event.id}>
-                <label className="eventTitle">{event.title}</label>
-                <label htmlFor="startDate">{event.start}</label>
+                <label
+                  className="eventTitle"
+                  onClick={() => {
+                    setSelectedEvent(event);
+                    setShowEditModal(true);
+                  }}
+                >
+                  {event.title}
+                </label>
+                <div className="eventFooter">
+                  <label htmlFor="startDate">{event.start}</label>
+                  <DeleteOutlineIcon
+                    style={{
+                      color: "red",
+                      fontSize: "20px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => handleDelete(event.id)}
+                  ></DeleteOutlineIcon>
+                </div>
               </div>
             );
           })}
@@ -60,19 +101,26 @@ const Calendar = () => {
             events={currentEvents}
             editable={true}
             eventClick={handleEventClick}
-            // selectable={true}
-            // selectMirror={true}
-            // eventsSet={(events) => setCurrentEvents(events)}
           />
         </div>
       </div>
 
       {showEditModal && (
-        <div className="modal">
-          <div className="modalHeader">
-            <p>Edit Event</p>
-          </div>
-        </div>
+        <EventModal
+          title="Edit"
+          data={selectedEvent}
+          setShowModal={setShowEditModal}
+          handleUpdate={handleUpdate}
+        ></EventModal>
+      )}
+
+      {showCreateModal && (
+        <EventModal
+          title="Create"
+          setShowModal={setShowEditModal}
+          handleCreate={handleCreate}
+          data={selectedEvent}
+        ></EventModal>
       )}
     </div>
   );

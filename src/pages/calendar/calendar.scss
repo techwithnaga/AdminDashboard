@@ -11,7 +11,7 @@
   .events {
     flex: 1;
     background-color: var(--color-bg500);
-    height: 100%;
+    height: calc(100% - 30px);
     padding: 10px;
     color: white;
     border-radius: 20px;
@@ -19,6 +19,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    overflow: auto;
 
     .event {
       height: 100px;
@@ -37,6 +38,12 @@
         &:hover {
           color: var(--color-gold500);
         }
+      }
+
+      .eventFooter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

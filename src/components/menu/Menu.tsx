@@ -13,7 +13,7 @@ const Menu = () => {
 
       {menu.map((item) => {
         return (
-          <div className="group" key={item.id}>
+          <div key={item.id.toString()} className="group">
             <span className="title">{item.title}</span>
             {item.listItems.map((listItem) => {
               return (
