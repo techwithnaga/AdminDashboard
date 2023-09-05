@@ -1,48 +1,27 @@
 import "./dataTable.scss";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
-import PageviewOutlinedIcon from "@mui/icons-material/PageviewOutlined";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+
 import { useEffect } from "react";
 import { User } from "../../types/User";
+import { Product } from "../../types/Product";
 
 type Props = {
   columns: GridColDef[];
-  slug: String;
-  rowsState: User[];
-  setRowsState: React.Dispatch<React.SetStateAction<User[]>>;
+  // slug: String;
+  rowsState: User[] | Product[];
+  // setRowsState: React.Dispatch<React.SetStateAction<User[] | Product[]>>;
+  // handleDelete: (id: number) => void;
 };
 
 const DataTable = (props: Props) => {
-  const { rowsState, setRowsState, columns, slug } = props;
+  const { rowsState, columns } = props;
 
-  const handleDelete = (idToDelete: number) => {
-    let newRows = rowsState.filter((row) => row.id !== idToDelete);
-    setRowsState(newRows);
-  };
-
-  const actionColumn: GridColDef = {
-    field: "action",
-    headerName: "Action",
-    width: 200,
-    renderCell: (params) => {
-      return (
-        <div className="icons">
-          <Link to={`/${slug}/${params.row.id}`} state={{ user: params.row }}>
-            <PageviewOutlinedIcon
-              className="icon"
-              style={{ color: "limegreen" }}
-            ></PageviewOutlinedIcon>
-          </Link>
-          <DeleteOutlineOutlinedIcon
-            className="icon"
-            style={{ color: "tomato" }}
-            onClick={() => handleDelete(params.row.id)}
-          ></DeleteOutlineOutlinedIcon>
-        </div>
-      );
-    },
-  };
+  // const handleDelete = (idToDelete: number) => {
+  //   let newRows: User[] | Product[] = rowsState.filter(
+  //     (row: User | Product) => row.id !== idToDelete
+  //   );
+  //   setRowsState(newRows);
+  // };
 
   useEffect(() => {}, [rowsState]);
   return (
@@ -50,7 +29,7 @@ const DataTable = (props: Props) => {
       <DataGrid
         className="dataGrid"
         rows={rowsState}
-        columns={[...columns, actionColumn]}
+        columns={columns}
         initialState={{
           pagination: {
             paginationModel: {

@@ -42,43 +42,36 @@ const Layout = () => {
     </ThemeProvider>
   );
 };
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
+      },
+      {
+        path: "/calendar",
+        element: <Calendar />,
+      },
+      {
+        path: "/user/:id",
+        element: <UserDetail />,
+      },
+    ],
+  },
 
-const App = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/products",
-          element: <Products />,
-        },
-        {
-          path: "/users",
-          element: <Users />,
-        },
-        {
-          path: "/calendar",
-          element: <Calendar />,
-        },
-        {
-          path: "/user/:id",
-          element: <UserDetail />,
-        },
-      ],
-    },
-
-    {
-      path: "/login",
-      element: <Login />,
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
-};
-
-export default App;
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);

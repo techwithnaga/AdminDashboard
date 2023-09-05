@@ -117,7 +117,7 @@ const Calendar = () => {
       {showCreateModal && (
         <EventModal
           title="Create"
-          setShowModal={setShowEditModal}
+          setShowModal={setShowCreateModal}
           handleCreate={handleCreate}
           data={selectedEvent}
         ></EventModal>

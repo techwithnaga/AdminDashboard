@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { User } from "../../types/User";
 import { Purchase } from "../../types/Purchase";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { userRows, orders, products } from "../../data";
 import "./user.scss";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { formatDollar } from "../../util";
+import { Button } from "@mui/material";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const UserDetail = () => {
   const [currentUser, setCurrentUser] = useState<User>();
@@ -14,6 +17,8 @@ const UserDetail = () => {
   const [totalSpent, setTotalSpent] = useState<number>(0);
   const [purchases, setPurchases] = useState<Purchase[]>([]);
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUser = () => {
@@ -72,7 +77,7 @@ const UserDetail = () => {
         for (let product of products) {
           if (product.id === order.productId) {
             total += quantity * product.price;
-            description = product.title;
+            description = product.description;
           }
         }
 
@@ -86,10 +91,40 @@ const UserDetail = () => {
       setPurchases(result);
     };
     getPurchases();
-  });
+  }, []);
+
+  const handleNext = () => {
+    navigate(
+      `/user/${currentUser ? (currentUser.id % userRows.length) + 1 : 1}`
+    );
+    navigate(0);
+  };
 
   return (
     <div className="user">
+      <div className="buttons">
+        {/* <Button
+          variant="text"
+          color="success"
+          className="prevNextButton"
+          onClick={() => {
+            navigate(-1);
+            location.reload();
+          }}
+        >
+          <NavigateBeforeIcon className="icon"></NavigateBeforeIcon>
+          Previous
+        </Button> */}
+        <Button
+          variant="text"
+          color="success"
+          className="prevNextButton"
+          onClick={() => handleNext()}
+        >
+          Next
+          <NavigateNextIcon className="icon"></NavigateNextIcon>
+        </Button>
+      </div>
       <div className="userContainer">
         <div className="left">
           <div className="leftTop">

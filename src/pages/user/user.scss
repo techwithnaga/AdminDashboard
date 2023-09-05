@@ -7,6 +7,19 @@
   border-radius: 20px;
   margin: auto;
 
+  .buttons {
+    // display: flex;
+    // justify-content: right;
+    padding-right: 10px;
+    float: right;
+
+    .prevNextButton {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
   .userContainer {
     display: flex;
     height: 100%;
@@ -56,6 +69,7 @@
 
       .leftBottom {
         width: 100%;
+        margin-top: 25px;
         .leftBottomContainer {
           padding: 0px 20px;
           .summaryItem {
