@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { User } from "../../types/User";
 import { Purchase } from "../../types/Purchase";
 import { useNavigate, useParams } from "react-router-dom";
-import { userRows, orders, products } from "../../data";
+import { customers, orders, products } from "../../data";
 import "./user.scss";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { formatDollar } from "../../util";
@@ -22,7 +22,7 @@ const UserDetail = () => {
 
   useEffect(() => {
     const getUser = () => {
-      userRows.forEach((user) => {
+      customers.forEach((user) => {
         if (user.id.toString() === id) {
           setCurrentUser(user);
         }
@@ -39,7 +39,7 @@ const UserDetail = () => {
       }
 
       let filteredOrders = orders.filter(
-        (order) => order.userId.toString() === id
+        (order) => order.customerId.toString() === id
       );
       setNumberPurchases(filteredOrders.length);
       let totalDollar = 0;
@@ -66,7 +66,7 @@ const UserDetail = () => {
       let result: Purchase[] = [];
 
       let filteredOrders = orders.filter(
-        (order) => order.userId.toString() === id
+        (order) => order.customerId.toString() === id
       );
 
       for (let order of filteredOrders) {
@@ -95,7 +95,7 @@ const UserDetail = () => {
 
   const handleNext = () => {
     navigate(
-      `/user/${currentUser ? (currentUser.id % userRows.length) + 1 : 1}`
+      `/user/${currentUser ? (currentUser.id % customers.length) + 1 : 1}`
     );
     navigate(0);
   };

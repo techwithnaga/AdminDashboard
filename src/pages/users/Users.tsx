@@ -1,6 +1,6 @@
 import "./users.scss";
 import { GridColDef } from "@mui/x-data-grid";
-import { userRows } from "../../data";
+import { customers } from "../../data";
 import DataTable from "../../components/dataTable/DataTable";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
@@ -21,8 +21,8 @@ type User = {
 
 const Users = () => {
   const [open, setOpen] = useState(false);
-  const [lastId, setLastId] = useState(userRows.length);
-  const [rowsState, setRowsState] = useState<User[]>(userRows);
+  const [lastId, setLastId] = useState(customers.length);
+  const [rowsState, setRowsState] = useState<User[]>(customers);
   const handleDelete = (id: number) => {
     setRowsState(rowsState.filter((row) => row.id !== id));
   };

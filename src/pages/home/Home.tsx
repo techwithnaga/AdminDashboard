@@ -10,6 +10,7 @@ import { chartBoxRevenue } from "../../data";
 import { chartBoxConversion } from "../../data";
 import { barChartBoxRevenue } from "../../data";
 import { barChartBoxVisit } from "../../data";
+import TopProduct from "../../components/topProduct/TopProduct";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
         <ChartBox {...chartBoxRevenue} />
       </div>
       <div className="box box6">
-        <ChartBox {...chartBoxConversion} />
+        <TopProduct></TopProduct>
       </div>
       <div className="box box7">
         <StackAreaChart />
