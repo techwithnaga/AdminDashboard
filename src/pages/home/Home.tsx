@@ -3,6 +3,8 @@ import TopBox from "../../components/topBox/TopBox";
 import ChartBox from "../../components/chartBox/ChartBox";
 import BarChartBox from "../../components/barChartBox/BarChartBox";
 import StackAreaChart from "../../components/stackAreaChart/StackAreaChart";
+import TotalRevenue from "../../components/totalRevenue/TotalRevenue";
+import TotalSales from "../../components/totalSales/TotalSales";
 import PieChartCustomLabel from "../../components/pieChartCustomLabel/PieChartCustomLabel";
 import { chartBoxUser } from "../../data";
 import { chartBoxProduct } from "../../data";
@@ -19,29 +21,28 @@ const Home = () => {
         <TopBox></TopBox>
       </div>
       <div className="box box2">
-        <ChartBox {...chartBoxUser} />
+        <TotalRevenue />
       </div>
       <div className="box box3">
-        <ChartBox {...chartBoxProduct} />
+        <TotalSales></TotalSales>
       </div>
-      <div className="box box4">
-        <PieChartCustomLabel />
-      </div>
+      <div className="box box4"></div>
       <div className="box box5">
-        <ChartBox {...chartBoxRevenue} />
+        <StackAreaChart />
       </div>
       <div className="box box6">
+        {" "}
         <TopProduct></TopProduct>
       </div>
       <div className="box box7">
-        <StackAreaChart />
+        {" "}
+        <PieChartCustomLabel />
       </div>
       <div className="box box8">
-        <BarChartBox {...barChartBoxRevenue} />
-      </div>
-      <div className="box box9">
+        {" "}
         <BarChartBox {...barChartBoxVisit} />
       </div>
+      <div className="box box9"></div>
     </div>
   );
 };

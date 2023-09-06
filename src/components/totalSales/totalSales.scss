@@ -1,0 +1,79 @@
+.totalSales {
+  padding: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+
+  .boxInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      h5 {
+        font-family: var(--font-mono);
+      }
+    }
+
+    .percentageWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      font-size: 22px;
+      padding: 20px;
+
+      .percentageItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        h6 {
+          &:first-child {
+            flex: 2;
+          }
+          &:nth-child(2) {
+            flex: 1;
+            color: var(--color-bg200);
+          }
+        }
+        .percentage {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .salesBottom {
+      text-align: center;
+      .link {
+        color: var(--color-bg100);
+      }
+    }
+  }
+
+  .chartInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    height: 100%;
+    margin-top: 10px;
+    width: 100%;
+
+    .chart {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}

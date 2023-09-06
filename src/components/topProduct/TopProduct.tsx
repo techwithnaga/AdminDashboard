@@ -22,7 +22,6 @@ const TopProduct = () => {
 
       //sort map
       let sortedMap = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
-      console.log(sortedMap);
       let productArr: Product[] = [];
       let sales: number[] = [];
 
@@ -46,15 +45,15 @@ const TopProduct = () => {
         {topProducts?.map((product, idx) => {
           return (
             <div className="listItem" key={product.id}>
-              <Link to={`/user/${product.id}`}>
-                <div className="product">
-                  <img src={product.img} alt="" />
-                  <div className="productText">
-                    <span className="description">{product.description}</span>
-                    <span className="category">{product.category}</span>
-                  </div>
+              {/* <Link to={`/user/${product.id}`}> */}
+              <div className="product">
+                <img src={product.img} alt="" />
+                <div className="productText">
+                  <span className="description">{product.description}</span>
+                  <span className="category">{product.category}</span>
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
               <div className="totalSales">
                 <span className="amount">{totalSales[idx]}</span>
                 <span>total</span>

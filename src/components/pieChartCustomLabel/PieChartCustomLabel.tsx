@@ -14,7 +14,7 @@ const PieChartCustomLabel = () => {
       <h5>Leads by Source</h5>
 
       <div className="chart">
-        <ResponsiveContainer width="99%" height={350}>
+        <ResponsiveContainer width="99%" height="95%">
           <PieChart>
             <Tooltip
               contentStyle={{ backgroundColor: "white", borderRadius: "5px" }}
@@ -22,7 +22,7 @@ const PieChartCustomLabel = () => {
             <Pie
               data={data}
               innerRadius="65%"
-              outerRadius="90%"
+              outerRadius="100%"
               paddingAngle={5}
               dataKey="value"
             >

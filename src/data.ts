@@ -43,8 +43,8 @@ export const menu = [
     listItems: [
       {
         id: 1,
-        title: "Users",
-        url: "/users",
+        title: "Customers",
+        url: "/customers",
         icon: "user.svg",
       },
       {
@@ -431,7 +431,7 @@ export const products: Product[] = [
     color: "white",
     producer: "Sony",
     category: "electronic",
-    price: 450,
+    price: 400,
   },
   {
     id: 2,
@@ -440,7 +440,7 @@ export const products: Product[] = [
     color: "black",
     producer: "Dell",
     category: "electronic",
-    price: 300,
+    price: 250,
   },
   {
     id: 3,
@@ -449,7 +449,7 @@ export const products: Product[] = [
     color: "gray",
     producer: "Samsung",
     category: "electronic",
-    price: 650,
+    price: 450,
   },
   {
     id: 4,
@@ -458,7 +458,7 @@ export const products: Product[] = [
     color: "white",
     producer: "Apple",
     category: "electronic",
-    price: 750,
+    price: 550,
   },
   {
     id: 5,
@@ -503,7 +503,7 @@ export const products: Product[] = [
     color: "Orange",
     producer: "comvita",
     category: "Food",
-    price: 150,
+    price: 190,
   },
   {
     id: 10,
@@ -526,7 +526,7 @@ export const orders = [
   {
     customerId: 1,
     productId: 10,
-    quantity: 5,
+    quantity: 3,
     year: "2020",
   },
   {
@@ -592,12 +592,12 @@ export const orders = [
   {
     customerId: 3,
     productId: 5,
-    quantity: 1,
+    quantity: 2,
     year: "2021",
   },
   {
     customerId: 3,
-    productId: 4,
+    productId: 9,
     quantity: 3,
     year: "2022",
   },
@@ -611,13 +611,13 @@ export const orders = [
     customerId: 4,
     productId: 10,
     quantity: 2,
-    year: "2019",
+    year: "2022",
   },
   {
     customerId: 4,
     productId: 2,
-    quantity: 3,
-    year: "2020",
+    quantity: 1,
+    year: "2023",
   },
   {
     customerId: 4,
@@ -629,13 +629,25 @@ export const orders = [
     customerId: 4,
     productId: 9,
     quantity: 4,
-    year: "2022",
+    year: "2021",
+  },
+  {
+    customerId: 4,
+    productId: 1,
+    quantity: 1,
+    year: "2023",
   },
   {
     customerId: 5,
     productId: 9,
     quantity: 2,
-    year: "2020",
+    year: "2023",
+  },
+  {
+    customerId: 5,
+    productId: 5,
+    quantity: 5,
+    year: "2022",
   },
   {
     customerId: 5,
@@ -645,9 +657,9 @@ export const orders = [
   },
   {
     customerId: 5,
-    productId: 5,
+    productId: 9,
     quantity: 2,
-    year: "2022",
+    year: "2021",
   },
   {
     customerId: 5,
@@ -706,7 +718,7 @@ export const orders = [
   {
     customerId: 7,
     productId: 2,
-    quantity: 3,
+    quantity: 1,
     year: "2023",
   },
   {
@@ -719,7 +731,7 @@ export const orders = [
     customerId: 8,
     productId: 9,
     quantity: 2,
-    year: "2020",
+    year: "2023",
   },
   {
     customerId: 8,
@@ -743,18 +755,24 @@ export const orders = [
     customerId: 9,
     productId: 8,
     quantity: 2,
-    year: "2019",
+    year: "2020",
   },
   {
     customerId: 9,
-    productId: 6,
+    productId: 1,
     quantity: 2,
-    year: "2021",
+    year: "2023",
   },
   {
     customerId: 9,
-    productId: 7,
+    productId: 10,
     quantity: 2,
+    year: "2023",
+  },
+  {
+    customerId: 9,
+    productId: 8,
+    quantity: 3,
     year: "2022",
   },
   {

@@ -37,7 +37,7 @@ const TopBox = () => {
         topCustomers.push(customer);
         topDollars.push(totalDollar);
       }
-      setTopCustomer(topCustomers);
+      setTopCustomer(topCustomers.slice(0, 7));
       setTopDollars(topDollars);
     };
 
@@ -65,6 +65,9 @@ const TopBox = () => {
             </div>
           );
         })}
+      </div>
+      <div className="link">
+        <Link to="/customers">View All</Link>
       </div>
     </div>
   );

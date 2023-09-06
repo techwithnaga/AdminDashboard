@@ -58,7 +58,7 @@ const App = () => {
           element: <Products />,
         },
         {
-          path: "/users",
+          path: "/customers",
           element: <Users />,
         },
         {
