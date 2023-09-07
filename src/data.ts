@@ -300,31 +300,31 @@ export const barChartBoxVisit = {
   chartData: [
     {
       name: "Sun",
-      visit: 4000,
+      visit: 400,
     },
     {
       name: "Mon",
-      visit: 3000,
+      visit: 300,
     },
     {
       name: "Tue",
-      visit: 2000,
+      visit: 200,
     },
     {
       name: "Wed",
-      visit: 2780,
+      visit: 278,
     },
     {
       name: "Thu",
-      visit: 1890,
+      visit: 189,
     },
     {
       name: "Fri",
-      visit: 2390,
+      visit: 239,
     },
     {
       name: "Sat",
-      visit: 3490,
+      visit: 349,
     },
   ],
 };

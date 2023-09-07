@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+    // border: 1px solid red;
 
     .title {
       display: flex;
@@ -28,12 +30,14 @@
       align-items: center;
       font-size: 22px;
       padding: 20px;
+      height: 100%;
 
       .percentageItem {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        height: 25%;
 
         h6 {
           &:first-child {
@@ -56,7 +60,7 @@
     .salesBottom {
       text-align: center;
       .link {
-        color: var(--color-bg100);
+        color: var(--color-bg300);
       }
     }
   }

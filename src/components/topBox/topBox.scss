@@ -9,11 +9,14 @@
     font-family: var(--font-mono);
   }
   .list {
+    height: 90%;
+    // border: 1px solid red;
     .listItem {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
+      height: 14.2%;
 
       &:hover {
         background-color: var(--color-bg400);
@@ -47,7 +50,7 @@
 
   .link {
     text-align: center;
-    margin-top: 20px;
-    color: var(--color-bg100);
+    margin-top: 10px;
+    color: var(--color-bg300);
   }
 }

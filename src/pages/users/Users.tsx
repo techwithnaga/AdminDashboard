@@ -118,7 +118,7 @@ const Users = () => {
   return (
     <div className="users">
       <div className="header">
-        <h1 style={{ color: "lightgrey" }}>Users</h1>
+        <h1 style={{ color: "lightgrey" }}>Customers</h1>
         <button className="btn" onClick={() => setOpen(true)}>
           <AddIcon
             style={{ fontSize: "20px", color: "var(--color-gold500)" }}

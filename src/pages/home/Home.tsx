@@ -6,6 +6,7 @@ import StackAreaChart from "../../components/stackAreaChart/StackAreaChart";
 import TotalRevenue from "../../components/totalRevenue/TotalRevenue";
 import TotalSales from "../../components/totalSales/TotalSales";
 import PieChartCustomLabel from "../../components/pieChartCustomLabel/PieChartCustomLabel";
+import ProductsPieChart from "../../components/productsPieChart/ProductsPieChart";
 import { chartBoxUser } from "../../data";
 import { chartBoxProduct } from "../../data";
 import { chartBoxRevenue } from "../../data";
@@ -26,7 +27,9 @@ const Home = () => {
       <div className="box box3">
         <TotalSales></TotalSales>
       </div>
-      <div className="box box4"></div>
+      <div className="box box4">
+        <ProductsPieChart></ProductsPieChart>
+      </div>
       <div className="box box5">
         <StackAreaChart />
       </div>

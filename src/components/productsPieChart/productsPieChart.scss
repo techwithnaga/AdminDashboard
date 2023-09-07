@@ -1,0 +1,61 @@
+.productsPieChart {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 10px 15px;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+
+  .pieChartHeader {
+    height: 10%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h5 {
+      font-family: var(--font-mono);
+    }
+
+    .link {
+      color: var(--color-bg300);
+    }
+  }
+
+  .productPieChart {
+    width: 100%;
+    height: calc(80% - 20px);
+  }
+
+  .options {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .header {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        label {
+          font-family: var(--font-mono);
+        }
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
