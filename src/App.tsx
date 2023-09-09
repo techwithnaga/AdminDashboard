@@ -15,6 +15,7 @@ import Calendar from "./pages/calendar/Calendar";
 import UserDetail from "./pages/user/User";
 import "./styles/global.scss";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Orders from "./pages/orders/Orders";
 
 const Layout = () => {
   const theme = createTheme({
@@ -56,6 +57,10 @@ const App = () => {
         {
           path: "/products",
           element: <Products />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
         },
         {
           path: "/customers",

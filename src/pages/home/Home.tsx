@@ -34,15 +34,12 @@ const Home = () => {
         <StackAreaChart />
       </div>
       <div className="box box6">
-        {" "}
         <TopProduct></TopProduct>
       </div>
       <div className="box box7">
-        {" "}
         <PieChartCustomLabel />
       </div>
       <div className="box box8">
-        {" "}
         <BarChartBox {...barChartBoxVisit} />
       </div>
       <div className="box box9"></div>

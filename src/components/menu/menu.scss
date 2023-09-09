@@ -1,5 +1,6 @@
 @import "../../styles/global.scss";
 @import "../../styles/variables.scss";
+@import "../../styles//responsive.scss";
 
 .menu {
   width: 15%;
@@ -8,6 +9,14 @@
   padding: 15px;
   border-radius: 20px;
 
+  @include xl {
+    display: none;
+  }
+
+  // @include sm {
+  //   display: none;
+  // }
+
   .head {
     display: flex;
     align-items: center;
@@ -15,11 +24,21 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+
+    @include xl {
+      display: none;
+    }
+
+    .title {
+      @include xxxl {
+        display: none;
+      }
+    }
   }
 
   .profilePic {
-    width: 100px;
-    height: 100px;
+    width: 60%;
+    height: 60%;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -37,6 +56,9 @@
       text-transform: uppercase;
       font-family: var(--font-mono);
       margin-top: 20px;
+      @include xl {
+        display: none;
+      }
     }
 
     .item {
@@ -52,10 +74,17 @@
       img {
         width: 12px;
         height: 12px;
+        @include xl {
+          width: 18px;
+          height: 18px;
+        }
       }
 
       .itemTitle {
         font-size: 1rem;
+        @include xl {
+          display: none;
+        }
       }
     }
   }

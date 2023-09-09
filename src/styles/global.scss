@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./responsive.scss";
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500&display=swap");
 
 :root {
@@ -59,12 +60,31 @@ a {
   font-family: "Inter", sans-serif;
   background-color: $dark-bg;
   color: $main-color;
-  height: 100vh;
 }
 
 .container {
   display: flex;
   height: 100%;
+
+  @include xxxl {
+    background-color: orange;
+  }
+
+  @include xxl {
+    background-color: rgba(255, 0, 0, 0.142);
+  }
+  @include xl {
+    background-color: green;
+  }
+  @include lg {
+    background-color: blue;
+  }
+  @include md {
+    background-color: yellow;
+  }
+  @include sm {
+    background-color: pink;
+  }
 }
 
 .menuContainer {

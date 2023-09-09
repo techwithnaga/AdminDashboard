@@ -5,10 +5,21 @@ import { useEffect } from "react";
 import { User } from "../../types/User";
 import { Product } from "../../types/Product";
 
+type Data = {
+  id: number;
+  customerImg: string;
+  firstName: string;
+  lastName: string;
+  productImg: string;
+  description: string;
+  quantity: number;
+  year: string;
+};
+
 type Props = {
   columns: GridColDef[];
   // slug: String;
-  rowsState: User[] | Product[];
+  rowsState: User[] | Product[] | Data[];
   // setRowsState: React.Dispatch<React.SetStateAction<User[] | Product[]>>;
   // handleDelete: (id: number) => void;
 };

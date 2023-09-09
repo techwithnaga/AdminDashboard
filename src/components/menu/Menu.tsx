@@ -8,7 +8,9 @@ const Menu = () => {
       <div className="head">
         <img src="/myIcon.png" alt="" className="profilePic" />
         <h5>Masnaga</h5>
-        <label htmlFor="title">Chief Technology Officer</label>
+        <label htmlFor="title" className="title">
+          Chief Technology Officer
+        </label>
       </div>
 
       {menu.map((item) => {
@@ -18,7 +20,7 @@ const Menu = () => {
             {item.listItems.map((listItem) => {
               return (
                 <Link to={listItem.url} className="item">
-                  <img src={listItem.icon} alt="" />
+                  <img src={listItem.icon} alt="" className="icon" />
                   <div className="itemTitle">
                     <p>{listItem.title}</p>
                   </div>

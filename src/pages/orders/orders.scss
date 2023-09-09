@@ -1,0 +1,63 @@
+.orders {
+  padding: 15px;
+  .header {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    .btn {
+      padding: 5px 15px;
+      color: var(--color-gold500);
+      border: 2px solid var(--color-gold500);
+      border-radius: 3px;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .table {
+    padding: 15px 20px;
+    height: 100%;
+    width: 100%;
+
+    .customer {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .name {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+
+    .product {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      .icon {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .avatar {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
