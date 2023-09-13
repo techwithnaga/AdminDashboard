@@ -45,7 +45,6 @@ const TopProduct = () => {
         {topProducts?.map((product, idx) => {
           return (
             <div className="listItem" key={product.id}>
-              {/* <Link to={`/user/${product.id}`}> */}
               <div className="product">
                 <img src={product.img} alt="" />
                 <div className="productText">
@@ -53,7 +52,6 @@ const TopProduct = () => {
                   <span className="category">{product.category}</span>
                 </div>
               </div>
-              {/* </Link> */}
               <div className="totalSales">
                 <span className="amount">{totalSales[idx]}</span>
                 <span>total</span>

@@ -100,7 +100,7 @@ const TotalSales = () => {
             </div>
           </div>
           <div className="percentageItem">
-            <h6>Video Games</h6>
+            <h6>Games</h6>
             <h6>{data?.get("Video Game")[0]}</h6>
             <div
               className="percentage"

@@ -34,7 +34,7 @@ const ProductsPieChart = () => {
         item.name = "Electronics";
         item.color = "#8884d8";
       } else if (category === "Video Game") {
-        item.name = "Video Games";
+        item.name = "Games";
         item.color = "#82ca9d";
       } else {
         item.name = "Foods";
@@ -78,14 +78,14 @@ const ProductsPieChart = () => {
         {data.map((item) => {
           return (
             <div className="option">
-              <div className="header">
+              <div className="top">
                 <div
                   className="dot"
                   style={{ backgroundColor: `${item.color}` }}
                 ></div>
                 <label>{item.name}</label>
               </div>
-              <label>{item.value}%</label>
+              <label className="value">{item.value}%</label>
             </div>
           );
         })}

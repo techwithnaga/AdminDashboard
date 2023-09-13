@@ -19,6 +19,10 @@
 
     .link {
       color: var(--color-bg300);
+
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -37,25 +41,21 @@
     margin-top: 10px;
 
     .option {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      .header {
+      .top {
         display: flex;
         gap: 10px;
         align-items: center;
-
-        label {
-          font-family: var(--font-mono);
-        }
         .dot {
           width: 10px;
           height: 10px;
           border-radius: 50%;
         }
+        label {
+          font-family: var(--font-mono);
+        }
+      }
+      .value {
+        margin-left: 22px;
       }
     }
   }

@@ -13,6 +13,7 @@ import { chartBoxRevenue } from "../../data";
 import { chartBoxConversion } from "../../data";
 import { barChartBoxRevenue } from "../../data";
 import { barChartBoxVisit } from "../../data";
+import ProductBarChart from "../../components/productBarChart/ProductBarChart";
 import TopProduct from "../../components/topProduct/TopProduct";
 
 const Home = () => {
@@ -37,12 +38,12 @@ const Home = () => {
         <TopProduct></TopProduct>
       </div>
       <div className="box box7">
-        <PieChartCustomLabel />
-      </div>
-      <div className="box box8">
         <BarChartBox {...barChartBoxVisit} />
       </div>
-      <div className="box box9"></div>
+      <div className="box box8">
+        <ProductBarChart></ProductBarChart>
+      </div>
+      {/* <div className="box box9"></div> */}
     </div>
   );
 };
