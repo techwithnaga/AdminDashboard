@@ -79,7 +79,10 @@ const TotalSales = () => {
         </div>
         <div className="percentageWrapper">
           <div className="percentageItem">
-            <h6>Electronics</h6>
+            <h6>
+              <Link to="/electronics">Electronics</Link>
+            </h6>
+
             <h6>{data?.get("electronic")[0]}</h6>
             <div
               className="percentage"
@@ -100,7 +103,10 @@ const TotalSales = () => {
             </div>
           </div>
           <div className="percentageItem">
-            <h6>Games</h6>
+            <h6>
+              <Link to="/games">Games</Link>
+            </h6>
+
             <h6>{data?.get("Video Game")[0]}</h6>
             <div
               className="percentage"
@@ -121,7 +127,10 @@ const TotalSales = () => {
             </div>
           </div>
           <div className="percentageItem">
-            <h6>Foods</h6>
+            <h6>
+              <Link to="/foods">Foods</Link>
+            </h6>
+
             <h6>{data?.get("Food")[0]}</h6>
             <div
               className="percentage"

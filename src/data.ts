@@ -68,19 +68,19 @@ export const menu = [
       {
         id: 1,
         title: "Electronics",
-        url: "/",
+        url: "/electronics",
         icon: "log.svg",
       },
       {
         id: 2,
         title: "Games",
-        url: "/",
+        url: "/games",
         icon: "chart.svg",
       },
       {
         id: 3,
         title: "Foods",
-        url: "/",
+        url: "/foods",
         icon: "note.svg",
       },
     ],

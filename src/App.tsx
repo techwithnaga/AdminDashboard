@@ -16,6 +16,9 @@ import UserDetail from "./pages/user/User";
 import "./styles/global.scss";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Orders from "./pages/orders/Orders";
+import Electronics from "./pages/electronics/Electronics";
+import Games from "./pages/games/Games";
+import Foods from "./pages/foods/Foods";
 
 const Layout = () => {
   const theme = createTheme({
@@ -66,6 +69,19 @@ const App = () => {
           path: "/customers",
           element: <Users />,
         },
+        {
+          path: "/electronics",
+          element: <Electronics />,
+        },
+        {
+          path: "/games",
+          element: <Games />,
+        },
+        {
+          path: "/foods",
+          element: <Foods />,
+        },
+
         {
           path: "/calendar",
           element: <Calendar />,
