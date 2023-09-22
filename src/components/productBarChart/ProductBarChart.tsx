@@ -12,49 +12,26 @@ import { orders, products } from "../../data";
 import { useEffect, useState } from "react";
 import { Product } from "../../types/Product";
 
-const ProductBarChart = () => {
-  const [data, setData] =
-    useState<
-      { year: string; Electronics: number; Games: number; Foods: number }[]
-    >();
+type Props = {
+  allSales:
+    | {
+        year: string;
+        Electronics: number;
+        Games: number;
+        Foods: number;
+      }[]
+    | undefined;
+};
 
-  useEffect(() => {
-    let productMap = new Map<string, [number, number, number]>();
-
-    for (let order of orders) {
-      let product: Product = products.find((p) => p.id === order.productId)!;
-      let year: string = order.year;
-      if (!productMap.has(year)) {
-        //init
-        productMap.set(year, [0, 0, 0]);
-      }
-
-      let valueArr = productMap.get(year)!;
-      if (product.category === "electronic") {
-        valueArr[0] += 1;
-      } else if (product.category === "Video Game") {
-        valueArr[1] += 1;
-      } else {
-        valueArr[2] += 1;
-      }
-
-      productMap.set(year, valueArr);
-    }
-
-    //convert to data Arr
-    // { year: string; Electronics: number; Games: number; Foods: number }
-    let dataArr = [];
-    for (let [year, arr] of productMap) {
-      dataArr.push({
-        year: year,
-        Electronics: arr[0],
-        Games: arr[1],
-        Foods: arr[2],
-      });
-    }
-
-    setData(dataArr);
-  }, []);
+const ProductBarChart = (props: Props) => {
+  // const [data, setData] = useState<
+  //   {
+  //     year: string;
+  //     electronicSales: number;
+  //     gameSales: number;
+  //     foodSales: number;
+  //   }[]
+  // >(props.allSales);
 
   return (
     <div className="productBarChart">
@@ -64,7 +41,7 @@ const ProductBarChart = () => {
 
       <div className="charContainer">
         <ResponsiveContainer width="99%" height="100%">
-          <BarChart data={data}>
+          <BarChart data={props.allSales}>
             <XAxis dataKey="year" />
             <YAxis
               label={{

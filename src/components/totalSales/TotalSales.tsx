@@ -4,9 +4,22 @@ import { Product } from "../../types/Product";
 import "./totalSales.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const TotalSales = () => {
+type Props = {
+  electronicSales:
+    | { year: string; totalElectronicSales: number; avgSales: number }[]
+    | undefined;
+  gameSales:
+    | { year: string; totalGameSales: number; avgSales: number }[]
+    | undefined;
+  foodSales:
+    | { year: string; totalFoodSales: number; avgSales: number }[]
+    | undefined;
+};
+
+const TotalSales = (props: Props) => {
+  const navigate = useNavigate();
   const [electronicPercent, setElectronicPercent] = useState<number>(0);
   const [videoGamePercent, setVideoGamePercent] = useState<number>(0);
   const [foodPercent, setFoodPercent] = useState<number>(0);
@@ -15,10 +28,11 @@ const TotalSales = () => {
 
   useEffect(() => {
     const getPercentages = () => {
-      //key = order category, value = [2023 qty, 2022 qty]
+      //key = order category; value = [2023 qty, 2022 qty]
       let lastTwoYears = new Map();
       lastTwoYears.set("total", [0, 0]);
 
+      //populate Map
       for (let order of orders) {
         let product = products.find(
           (product: Product) => product.id === order.productId
@@ -80,7 +94,12 @@ const TotalSales = () => {
         <div className="percentageWrapper">
           <div className="percentageItem">
             <h6>
-              <Link to="/electronics">Electronics</Link>
+              <Link
+                to="/electronics"
+                state={{ electronicSales: props.electronicSales }}
+              >
+                Electronics
+              </Link>
             </h6>
 
             <h6>{data?.get("electronic")[0]}</h6>
@@ -104,7 +123,9 @@ const TotalSales = () => {
           </div>
           <div className="percentageItem">
             <h6>
-              <Link to="/games">Games</Link>
+              <Link to="/games" state={{ gameSales: props.gameSales }}>
+                Games
+              </Link>
             </h6>
 
             <h6>{data?.get("Video Game")[0]}</h6>
@@ -128,7 +149,9 @@ const TotalSales = () => {
           </div>
           <div className="percentageItem">
             <h6>
-              <Link to="/foods">Foods</Link>
+              <Link to="/foods" state={{ foodSales: props.foodSales }}>
+                Foods
+              </Link>
             </h6>
 
             <h6>{data?.get("Food")[0]}</h6>

@@ -1,0 +1,17 @@
+.games {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 92vh;
+  padding: 20px;
+
+  .header {
+    flex: 1;
+  }
+
+  .chart {
+    flex: 9;
+    height: 100%;
+  }
+}

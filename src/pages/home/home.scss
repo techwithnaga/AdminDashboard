@@ -7,7 +7,7 @@
   grid-auto-rows: minmax(180px, auto);
   grid-auto-flow: dense;
   gap: 15px;
-  padding: 15px;
+  padding: 0px 15px;
 
   @include xxxl {
     grid-template-columns: repeat(3, 1fr);

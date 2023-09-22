@@ -42,7 +42,6 @@ const TotalRevenue = () => {
 
   useEffect(() => {
     const calculatePercentage = () => {
-      console.log(chartData);
       let currentRevenue = chartData[4].revenue;
       let prevRevenue = chartData[3].revenue;
       setPercentage(
