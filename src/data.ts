@@ -29,12 +29,12 @@ export const menu = [
         url: "/",
         icon: "home.svg",
       },
-      {
-        id: 2,
-        title: "Admins",
-        url: "/admins",
-        icon: "post2.svg",
-      },
+      // {
+      //   id: 2,
+      //   title: "Admins",
+      //   url: "/admins",
+      //   icon: "post2.svg",
+      // },
     ],
   },
   {
@@ -98,29 +98,11 @@ export const menu = [
       {
         id: 2,
         title: "About",
-        url: "/",
+        url: "/about",
         icon: "element.svg",
       },
     ],
   },
-  // {
-  //   id: 4,
-  //   title: "Maintenance",
-  //   listItems: [
-  //     {
-  //       id: 1,
-  //       title: "Settings",
-  //       url: "/",
-  //       icon: "setting.svg",
-  //     },
-  //     {
-  //       id: 2,
-  //       title: "Backups",
-  //       url: "/",
-  //       icon: "backup.svg",
-  //     },
-  //   ],
-  // },
 ];
 
 export const chartBoxUser = {

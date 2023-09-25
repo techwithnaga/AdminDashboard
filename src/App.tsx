@@ -20,6 +20,7 @@ import Orders from "./pages/orders/Orders";
 import Electronics from "./pages/electronics/Electronics";
 import Games from "./pages/games/Games";
 import Foods from "./pages/foods/Foods";
+import About from "./pages/about/About";
 
 const Layout = () => {
   const theme = createTheme({
@@ -90,6 +91,10 @@ const App = () => {
         {
           path: "/user/:id",
           element: <UserDetail />,
+        },
+        {
+          path: "/about",
+          element: <About />,
         },
       ],
     },
