@@ -12,11 +12,10 @@ import { DateClickArg } from "@fullcalendar/interaction";
 import { EventInput } from "@fullcalendar/core/index.js";
 
 const Calendar = () => {
-  const [currentEvents, setCurrentEvents] =
-    useState<EventInput[]>(initialEvents);
+  const [currentEvents, setCurrentEvents] = useState<event[]>(initialEvents);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState({
+  const [selectedEvent, setSelectedEvent] = useState<event>({
     id: "",
     title: "",
     start: "",
@@ -29,7 +28,7 @@ const Calendar = () => {
   };
 
   const handleDateClick = (selected: DateClickArg) => {
-    console.log("event click arg " + selected);
+    // console.log("event click arg " + selected);
     setSelectedEvent({
       id: (currentEvents.length + 1).toString(),
       title: "",
@@ -49,14 +48,20 @@ const Calendar = () => {
 
   const handleEventClick = (selected: EventClickArg) => {
     console.log(selected);
-    setSelectedEvent(selected.event);
+    let def = selected.event._def;
+    let sEvent: event = {
+      id: def.publicId,
+      title: def.title,
+      start: selected.event._instance?.range.end.toString()!,
+    };
+    setSelectedEvent(sEvent);
     setShowEditModal(true);
   };
 
   const handleUpdate = (data: event) => {
     //update
     setCurrentEvents(
-      currentEvents.map((event: EventInput) => {
+      currentEvents.map((event: event) => {
         if (event.id == data.id) {
           return { ...event, title: data.title };
         } else {
@@ -83,7 +88,7 @@ const Calendar = () => {
       <div className="calendarContainer">
         <div className="events">
           <h5>Events</h5>
-          {currentEvents.map((event: EventInput) => {
+          {currentEvents.map((event: event) => {
             return (
               <div className="event" key={event.id}>
                 <label
