@@ -9,8 +9,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./electronic.scss";
-import { useLocation } from "react-router-dom";
-import { useAppSelector } from "../../redux/store";
 import { useElectronicStore } from "../../zustand/useEletronicStore";
 
 const Electronics = () => {

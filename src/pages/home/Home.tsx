@@ -11,8 +11,6 @@ import TopProduct from "../../components/topProduct/TopProduct";
 import { useEffect, useState } from "react";
 import { orders, products } from "../../data";
 import { Product } from "../../types/Product";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { addElectronicSale } from "../../redux/electronicSalesSlice";
 import { useElectronicStore } from "../../zustand/useEletronicStore";
 import { useGameStore } from "../../zustand/useGameStore";
 import { useFoodStore } from "../../zustand/useFoodStore";

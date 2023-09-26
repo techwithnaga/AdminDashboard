@@ -4,15 +4,11 @@ import {
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 import { useEffect, useState } from "react";
-import { orders, products, customers } from "../../data";
-import { Product } from "../../types/Product";
-import { Customer } from "../../types/Customer";
-import { Link } from "react-router-dom";
+import { orders, products } from "../../data";
 
 type Data = {
   name: string;

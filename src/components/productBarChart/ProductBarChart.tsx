@@ -8,9 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./productBarChart.scss";
-import { orders, products } from "../../data";
-import { useEffect, useState } from "react";
-import { Product } from "../../types/Product";
 
 type Props = {
   allSales:

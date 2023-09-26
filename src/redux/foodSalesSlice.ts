@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface FoodSale {
+export interface FoodSale {
   year: string;
   totalFoodSales: number;
   avgSales: number;
 }
 
-interface FoodSaleState {
+export interface FoodSaleState {
   foodSales: FoodSale[];
 }
 

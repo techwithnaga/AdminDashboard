@@ -1,11 +1,9 @@
 import "./addUser.scss";
 import { GridColDef } from "@mui/x-data-grid";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { Box, Button, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 type User = {
   id: number;
@@ -26,7 +24,7 @@ type Props = {
 };
 
 const AddUser = (props: Props) => {
-  const { columns, setOpen, addRow, lastId, setLastId } = props;
+  const { setOpen, addRow, lastId, setLastId } = props;
 
   const handleFormSubmit = (values: User) => {
     setLastId(lastId + 1);
@@ -35,10 +33,13 @@ const AddUser = (props: Props) => {
   };
 
   const initialValues = {
+    id: lastId + 1,
+    img: "",
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
+    verified: true,
   };
 
   const phoneRegExp =
@@ -85,6 +86,7 @@ const AddUser = (props: Props) => {
                   name="firstName"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.firstName}
                   error={!!touched.firstName && !!errors.firstName}
                   helperText={touched.firstName && errors.firstName}
                   className="item"
@@ -97,6 +99,7 @@ const AddUser = (props: Props) => {
                   name="lastName"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.lastName}
                   error={!!touched.lastName && !!errors.lastName}
                   helperText={touched.lastName && errors.lastName}
                   className="item"
@@ -109,6 +112,7 @@ const AddUser = (props: Props) => {
                   name="email"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.email}
                   error={!!touched.email && !!errors.email}
                   helperText={touched.email && errors.email}
                   className="item"
@@ -121,6 +125,7 @@ const AddUser = (props: Props) => {
                   name="phone"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.phone}
                   error={!!touched.phone && !!errors.phone}
                   helperText={touched.phone && errors.phone}
                   className="item"

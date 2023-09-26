@@ -2,26 +2,18 @@ import { useState, useEffect } from "react";
 import { GridColDef } from "@mui/x-data-grid";
 import "./orders.scss";
 import { Link } from "react-router-dom";
-import AddIcon from "@mui/icons-material/Add";
+
 import PageviewOutlinedIcon from "@mui/icons-material/PageviewOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import { orders, customers, products } from "../../data";
-import { Order } from "../../types/Order";
 import DataTable from "../../components/dataTable/DataTable";
 
 const Orders = () => {
-  const [open, setOpen] = useState(false);
-  const [lastId, setLastId] = useState(orders.length);
   const [rowsState, setRowsState] = useState<Data[]>([]);
   const handleDelete = (id: number) => {
     setRowsState(rowsState.filter((row) => row.id !== id));
   };
 
-  const addRow = (newRow: Data) => {
-    newRow.id = rowsState.length + 1;
-
-    setRowsState((prevRows) => [...prevRows, newRow]);
-  };
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -158,26 +150,11 @@ const Orders = () => {
     <div className="orders">
       <div className="header">
         <h1 style={{ color: "lightgrey" }}>Orders</h1>
-        <button className="btn" onClick={() => setOpen(true)}>
-          <AddIcon
-            style={{ fontSize: "20px", color: "var(--color-gold500)" }}
-          ></AddIcon>{" "}
-          Create User
-        </button>
       </div>
 
       <div className="table">
         <DataTable rowsState={rowsState} columns={columns}></DataTable>
       </div>
-      {/* {open && (
-        <AddUser
-          setOpen={setOpen}
-          columns={columns}
-          addRow={addRow}
-          lastId={lastId}
-          setLastId={setLastId}
-        />
-      )} */}
     </div>
   );
 };

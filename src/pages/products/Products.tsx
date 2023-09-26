@@ -7,7 +7,7 @@ import { useState } from "react";
 import { formatDollar } from "../../util";
 
 const Products = () => {
-  const [rowsState, setRowsState] = useState<Product[]>(products);
+  const [rowsState] = useState<Product[]>(products);
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 90 },
     {

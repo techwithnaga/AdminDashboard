@@ -7,7 +7,7 @@ import "./user.scss";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { formatDollar } from "../../util";
 import { Button } from "@mui/material";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+// import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const UserDetail = () => {

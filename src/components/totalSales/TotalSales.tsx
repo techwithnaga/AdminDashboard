@@ -4,7 +4,7 @@ import { Product } from "../../types/Product";
 import "./totalSales.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Props = {
   electronicSales:
@@ -19,7 +19,6 @@ type Props = {
 };
 
 const TotalSales = (props: Props) => {
-  const navigate = useNavigate();
   const [electronicPercent, setElectronicPercent] = useState<number>(0);
   const [videoGamePercent, setVideoGamePercent] = useState<number>(0);
   const [foodPercent, setFoodPercent] = useState<number>(0);

@@ -3,7 +3,6 @@ import { Tooltip } from "recharts";
 import { useEffect, useState } from "react";
 import { orders, products } from "../../data";
 import "./totalRevenue.scss";
-import { formatDollar } from "../../util";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { orders, products } from "../../data";
 import { Product } from "../../types/Product";
 import "./topProduct.scss";
-import { Link } from "react-router-dom";
 
 const TopProduct = () => {
   const [topProducts, setTopProducts] = useState<Product[]>([]);

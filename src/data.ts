@@ -2,17 +2,17 @@ import { Product } from "./types/Product";
 
 export let initialEvents = [
   {
-    id: 1,
+    id: "1",
     title: "Techwithnaga's Christmas Celebration",
     start: "2023-12-23",
   },
   {
-    id: 2,
+    id: "2",
     title: "Meeting with vendors",
     start: "2023-11-23",
   },
   {
-    id: 3,
+    id: "3",
     title: "Performance review",
     start: "2023-10-23",
   },
